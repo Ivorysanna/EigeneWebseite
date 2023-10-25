@@ -4,17 +4,23 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <div class="about-me">
-        <div class="blue-triangle"></div>
-		<img src="ich.JPG">
+		<div class="about-me-photo">
+			<div class="small-square"></div>
+			<img src="ich.JPG">
+		</div>
     </div>
 </Layout>
 
 <style>
-    .blue-triangle {
+    .small-square {
         width: 590px;
         height: 670px;
         background-color: #DDBEA9;
     }
+
+	.about-me-photo {
+		/* position: relative; */
+	}
 
 	img {
 		width: 600px;
