@@ -3,79 +3,81 @@
         <div class="square"></div>
         <img src="ich.JPG" />
     </div>
-    <h1>Über mich</h1>
-    <div class="small-square"></div>
-    <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-        sit amet
-    </p>
-    <p class="button">
-        <a href="mailto:violetta.pyralov@gmail.com">Let´s keep in touch</a>
-    </p>
+    <div class="about-me-text">
+        <h1>Über mich</h1>
+        <div class="small-square"></div>
+        <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+            sit amet
+        </p>
+        <p class="button">
+            <a href="mailto:violetta.pyralov@gmail.com">Let´s keep in touch</a>
+        </p>
+    </div>
 </div>
 
 <style>
-    
-	h1{
-		position: absolute;
-		top: 290px;
-		left: 1000px;
-		font-size: 20px;
-		text-transform: uppercase;
-	}
+    .about-me {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
 
-	.small-square{	
-		position: absolute;
-		top: 318px;
-		left: 1000px;
-		width: 90px;
-		height: 6px;
-		background-color: #ddbea9;
-	}
+    .about-me-text {
+        margin: 200px 0 0 150px;
+    }
 
-    .square {
-        width: 700px;
-        height: 750px;
+    h1 {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .small-square {
+        width: 90px;
+        height: 6px;
         background-color: #ddbea9;
     }
 
+    .square {
+        position: absolute;
+        right: 70px;
+        top: -50px;
+        width: 110%;
+        height: 120%;
+        background-color: #ddbea9;
+        z-index: -1;
+    }
+
     .about-me-photo {
-        /* position: relative; */
+        position: relative;
     }
 
     img {
         width: 700px;
         /* height: 767px; */
-        position: absolute;
-        top: 120px;
-        left: 86px;
     }
 
     p {
-        position: absolute;
-        top: 350px;
-        left: 1000px;
         width: 600px;
         font-size: 20px;
         line-height: 30px;
     }
 
-	.button{
-		position: absolute;
-		top: 600px;
-		left: 1000px;
-		width: 200px;
-		height: 50px;
-		background-color: #A5A58D;
-		font-size: 20px;
-		line-height: 50px;
-		text-align: center;
-		cursor: pointer;
-		border-radius: 25px;
-	}
+    .button {
+        width: 200px;
+        height: 50px;
+        background-color: #a5a58d;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 25px;
+    }
 
-	.button a{
-		color: white;
-		text-decoration: none;
-	}
+    .button a {
+        color: white;
+        text-decoration: none;
+    }
 </style>
