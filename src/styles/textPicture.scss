@@ -7,25 +7,25 @@
 }
 
 .picture {
-    width: 40%;
+    width: 50%;
     height: auto;
 }
 
 .title{
     font-size: xxx-large;
-    margin: 5rem 0 1rem 3rem;
+    margin: 6rem 0 1rem 5rem;
 
 }
 
 .text {
-    width: 60%;
+    width: 50%;
     height: auto;
     /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: x-large;
-    margin-left: 3rem;
+    font-size: xx-large;
+    margin-left: 5rem;
 }
 .button {
     margin-top: 3rem;
@@ -37,6 +37,6 @@
     text-align: center;
     cursor: pointer;
     border-radius: 25px;
-    margin-left: 3rem;
+    margin-left: 5rem;
     color:white
 }
