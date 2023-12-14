@@ -1,0 +1,42 @@
+.picturetext-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-top: 2rem;
+    /* box-sizing: border-box; */
+}
+
+.picture {
+    width: 40%;
+    height: auto;
+}
+
+.title{
+    font-size: xxx-large;
+    margin: 5rem 0 1rem 3rem;
+
+}
+
+.text {
+    width: 60%;
+    height: auto;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    margin-left: 3rem;
+}
+.button {
+    margin-top: 3rem;
+    width: 200px;
+    height: 50px;
+    background-color: #a5a58d;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 3rem;
+    color:white
+}

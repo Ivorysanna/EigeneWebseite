@@ -1,0 +1,17 @@
+---
+const { picture, title, text, buttontext } = Astro.props;
+---
+
+<div class="picturetext-container">
+    <div class="text">
+        <h1 class="title">{title}</h1>
+        <p class="text">{text}</p>
+        <p class="button">{buttontext}</p>
+    </div>
+    <img class="picture" src={picture} />
+
+</div>
+
+<style lang="scss">
+    @import "~styles/textPicture.scss";
+</style>
