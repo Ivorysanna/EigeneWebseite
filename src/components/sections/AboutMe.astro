@@ -16,17 +16,24 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @import "~styles/mixins/_media-queries.scss";
+
     .about-me {
-        margin-top: 3rem;
+        margin-top: 5rem;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        width: 100%;
+        /* justify-content: center; */
+        margin-left: 10vw;
+        /* width: 100%; */
+
+        @include respond-below(lg) {
+            flex-direction: column;
+        }
     }
 
     .about-me-text {
-        margin: 200px 0 0 150px;
+        margin: 200px 0 0 10vw;
     }
 
     h1 {
@@ -39,33 +46,35 @@
         height: 6px;
         background-color: #ddbea9;
     }
-
+    
     .square {
         position: absolute;
         right: 70px;
-        top: -50px;
-        width: 110%;
-        height: 120%;
+        top: -20%;
+        width: 110vw;
+        height: 130%;
         background-color: #ddbea9;
         z-index: -1;
     }
-
+    
     .about-me-photo {
         position: relative;
+        width: 35vw;
     }
 
     img {
-        width: 700px;
-        /* height: 767px; */
+        width: 100%;
     }
 
     p {
+        margin-top: 2rem;
         width: 600px;
         font-size: 20px;
         line-height: 30px;
     }
-
+    
     .button {
+        margin-top: 3rem;
         width: 200px;
         height: 50px;
         background-color: #a5a58d;

@@ -1,103 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AboutMe from "../components/AboutMe.astro";
-import EducationPath from "../components/EducationPath.astro";
+import AboutMe from "../components/sections/AboutMe.astro";
+import EducationPath from "../components/sections/EducationPath.astro";
+import Skills from "../components/sections/Skills.astro";
 ---
 
 <Layout>
     <AboutMe />
     <EducationPath />
-    <div id="skills-anchor" class="skills-section">
-        <div class="skills">
-            <h1>Skills</h1>
-            <div class="small-square"></div>
-            <div  class="skills-card-container">
-                <div class="skill-card">
-                    <p class="skill-points">HTML 5 und CSS 3</p>
-                    <p class="skill-points">FIGMA</p>
-                    <p class="skill-points">Adobe Xd</p>
-                    <p class="skill-points">Interfacedesign</p>
-                    <p class="skill-points">UX Research</p>
-                    <p class="skill-points">Web Analytics</p>
-                    <p class="skill-points">Typo3</p>
-                    <p class="skill-points">Shopware</p>
-                </div>  
-            </div>
-            <div class="skillsBackgroundImage">
-                <img src="skillsBackground.png">
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .skill-points {
-            padding: 15px;
-            margin: 0 30px;
-            font-size: 30px;
-            text-align: center;
-            border-bottom: 3px solid black;
-            text-transform: uppercase;
-        }
-
-        .skillsBackgroundImage {
-            position: relative;
-            bottom: 560px;
-            left: 550px;
-            /* width: 100%; */
-            height: 100%;
-            background-repeat: no-repeat;
-            /* background-size: cover; */
-            background-position: center;
-            z-index: 1;
-            border-radius: 25%;
-            width: 400px;
-        }
-
-        .skillsBackgroundImage img {
-            width: 40%;
-            /* height: 30%; */
-            /* object-fit: cover; */
-            border-radius: 31px;
-            z-index: -1;
-        }
-        .skill-card {
-            margin: 0 15vw;
-            padding: 20px;
-            background-color: #fff5ed;
-            border-radius: 31px;
-            transition: all 0.5s ease;
-            width: 30vw;
-            z-index: 1000;
-            box-shadow: 10px 10px 25px rgb(78, 78, 78);
-        }
-
-        .skills-card-container{
-            position: relative;
-            z-index: 100;
-        }
-
-        .skill-points:hover {
-            background-color: #ddbea9;
-        }
-        .skills-section {
-            background-color: #ddbea9;
-        }
-        .skills {
-            margin: 150px 86px 50px 86px;
-            padding: 50px 0 100px 0;
-            /* text-align: center; */
-        }
-        h1 {
-            font-size: 20px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-        .small-square {
-            margin: 8px 0 50px 0;
-            /* left: 0px; */
-            width: 90px;
-            height: 6px;
-            background-color: #fff5ed;
-        }
-    </style>
+    <Skills />
 </Layout>

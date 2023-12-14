@@ -1,0 +1,25 @@
+---
+const { title, color="#ddbea9" } = Astro.props;
+---
+
+<div class="titleDiv">
+    <h2>{title}</h2>
+    <div class="small-square"></div>
+</div>
+
+<style define:vars={{ color }}>
+    .small-square {
+        width: 90px;
+        height: 6px;
+        background-color: var(--color);
+    }
+
+    h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .titleDiv {
+        margin-left: 8rem;
+    }
+</style>

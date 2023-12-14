@@ -1,10 +1,10 @@
 ---
-import SingleFlipCard from "./SingleFlipCard.astro";
+import SingleFlipCard from "../SingleFlipCard.astro";
+import Title from "../Title.astro";
 ---
 
 <div id="education-path-anchor" class="education-path">
-    <h1>Bildungsweg</h1>
-    <div class="small-square"></div>
+    <Title title="Bildungsweg"/>
 
     <div class="cards-group">
         <SingleFlipCard title="Medieninformatik BSc." dateRange="10.2019 - 08.2023" subtitle="Studium an der Hochschule Furtwangen" icon="school.svg">
@@ -19,10 +19,21 @@ import SingleFlipCard from "./SingleFlipCard.astro";
     </div>
 </div>
 
-<style>
+<style lang="scss">
+    @import "~styles/mixins/_media-queries.scss";
+
     .cards-group {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         padding: 30px 40px;
+
+        @include respond-below(sm) {
+            flex-direction: column;
+        }
+    }
+
+    .education-path {
+        margin-top: 16rem;
     }
 </style>
