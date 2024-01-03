@@ -1,0 +1,46 @@
+name: Build and Deploy with FTP
+
+on: push
+
+jobs:
+    build:
+        name: Build Astro
+        runs-on: ubuntu-20.04
+        needs:
+            - eslint-check
+        steps:
+            - uses: actions/checkout@v3
+            - name: Install, build, and upload your site output
+              uses: withastro/action@v1
+
+    deploy-gh-pages:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
+
+    # Deploy if this is the master branch
+    deploy-ftp:
+        name: Deploy to FTP
+        needs: build
+        runs-on: ubuntu-20.04
+        if: github.ref == 'refs/heads/master'
+        steps:
+            - uses: actions/download-artifact@master
+              with:
+                  name: build-artifact
+                  path: .output/public/
+            - name: Deploy to FTP Server
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ha01s018.org-dns.com
+                  username: bassadin_root_website
+                  password: ${{ secrets.FTP_Password }}
+                  protocol: ftps
+                  local-dir: .output/public/
+                  security: strict

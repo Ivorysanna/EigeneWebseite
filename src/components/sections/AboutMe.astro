@@ -1,17 +1,20 @@
+---
+import Title from "~components/Title.astro";
+---
+
 <div id="about-me-anchor" class="about-me">
     <div class="about-me-photo">
         <div class="square"></div>
         <img src="ich.JPG" />
     </div>
     <div class="about-me-text">
-        <h1>Über mich</h1>
-        <div class="small-square"></div>
+        <Title title="Über mich" />
         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-            sit amet
+            Hi! ich bin Violetta, 26 Jahre alt und frisch in Karlsruhe eingezogen. Im August 2023 habe ich mein Studium als Medieninformatikerin erfolgreich abgeschlossen. Mich faszinieren neue Technologien und kreatives Design. Auf meiner Webseite möchte ich meine verschiedenen Projekte teilen und
+            mich über meine Erfahrungen und Ideen austauschen.
         </p>
         <p class="button">
-            <a href="mailto:violetta.pyralov@gmail.com">Let´s keep in touch</a>
+            <a href="mailto:violetta.pyralov@gmail.com">Let's keep in touch</a>
         </p>
     </div>
 </div>
@@ -23,9 +26,7 @@
         margin-top: 5rem;
         display: flex;
         flex-direction: row;
-        /* justify-content: center; */
         margin-left: 10vw;
-        /* width: 100%; */
 
         @include respond-below(lg) {
             flex-direction: column;
@@ -33,7 +34,9 @@
     }
 
     .about-me-text {
-        margin: 200px 0 0 10vw;
+        @include respond-above(lg) {
+            margin: 200px 0 0 10vw;
+        }
     }
 
     h1 {
@@ -41,12 +44,6 @@
         text-transform: uppercase;
     }
 
-    .small-square {
-        width: 90px;
-        height: 6px;
-        background-color: #ddbea9;
-    }
-    
     .square {
         position: absolute;
         right: 70px;
@@ -56,10 +53,14 @@
         background-color: #ddbea9;
         z-index: -1;
     }
-    
+
     .about-me-photo {
         position: relative;
-        width: 35vw;
+        width: 70vw;
+        
+        @include respond-above(lg) {
+            width: 35vw;
+        }
     }
 
     img {
@@ -68,14 +69,14 @@
 
     p {
         margin-top: 2rem;
-        width: 600px;
         font-size: 20px;
         line-height: 30px;
     }
-    
+
     .button {
         margin-top: 3rem;
-        width: 200px;
+        width: fit-content;
+        padding: 0 1rem;
         height: 50px;
         background-color: #a5a58d;
         font-size: 20px;

@@ -1,5 +1,5 @@
 ---
-const { title, color="#ddbea9" } = Astro.props;
+const { title, color = "#ddbea9" } = Astro.props;
 ---
 
 <div class="titleDiv">
@@ -7,7 +7,7 @@ const { title, color="#ddbea9" } = Astro.props;
     <div class="small-square"></div>
 </div>
 
-<style define:vars={{ color }}>
+<style define:vars={{ color }} lang="scss">
     .small-square {
         width: 90px;
         height: 6px;
@@ -15,11 +15,11 @@ const { title, color="#ddbea9" } = Astro.props;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: x-large;
         text-transform: uppercase;
     }
 
     .titleDiv {
-        margin-left: 8rem;
+        margin: 4rem 0 2rem 0;
     }
 </style>

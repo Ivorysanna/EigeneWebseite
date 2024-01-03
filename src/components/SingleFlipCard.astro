@@ -6,8 +6,8 @@ const { title, dateRange, subtitle, icon } = Astro.props;
     <div class="flip-card-inner">
         <div class="flip-card-front">
             <img src={icon} />
-            <h1 class="title">{title}</h1>
-            <h2>{dateRange}</h2>
+            <h2 class="title">{title}</h2>
+            <h3>{dateRange}</h3>
             <p class="secondInfo">{subtitle}</p>
         </div>
         <div class="flip-card-back">
@@ -16,108 +16,64 @@ const { title, dateRange, subtitle, icon } = Astro.props;
     </div>
 </div>
 
-<style>
-    /* Flip Card */
+<style lang="scss">
+    @import "~styles/mixins/_media-queries.scss";
     .flip-card {
         background-color: transparent;
-        width: 500px;
+        width: 33%;
+
+        @include respond-below(md) {
+            width: 100%;
+        }
+
         height: 350px;
         perspective: 1000px;
-        margin: 0 20px;
-    }
+        padding: 1rem 5rem;
 
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-    }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
 
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
+        &:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
 
-    .flip-card-front,
-    .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        /* margin: 0 20px; */
-        background-color: #ddbea9;
-        border-radius: 31px;
-        -webkit-backface-visibility: hidden; /* Safari */
-        backface-visibility: hidden;
-    }
-    .flip-card-back {
-        transform: rotateY(180deg);
-    }
-    .education-path {
-        margin: 150px 86px;
-    }
-    h1 {
-        font-size: 20px;
-        text-transform: uppercase;
-        margin-top: 10px;
-    }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background-color: #ddbea9;
+            border-radius: 31px;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        h2 {
+            text-transform: uppercase;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 20px;
+            word-break: break-all;
+        }
+        h3 {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    .title {
-        font-size: 25px;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .secondInfo {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 25px;
-    }
-
-    .small-square {
-        margin-top: 8px;
-        /* left: 0px; */
-        width: 90px;
-        height: 6px;
-        background-color: #ddbea9;
-    }
-
-    /* CARD STYLES */
-   
-    .card {
-        /* position: absolute; */
-        /* top: 100px;
-    left: 100px; */
-        top: 100px;
-        width: 500px;
-        height: 350px;
-        padding: 20px;
-        margin: 0 20px;
-        background-color: #ddbea9;
-        border-radius: 31px;
-    }
-
-    .card img {
-        width: 14%;
-        /* height: 100%; */
-        object-fit: cover;
-        border-radius: 31px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .card h1 {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 20px;
-        text-transform: initial;
+        .secondInfo {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 25px;
+        }
     }
 </style>
