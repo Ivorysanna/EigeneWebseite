@@ -4,17 +4,33 @@ import Title from "../Title.astro";
 ---
 
 <div id="education-path-anchor" class="education-path">
-    <Title title="Bildungsweg"/>
+    <Title title="Bildungsweg" />
 
     <div class="cards-group">
-        <SingleFlipCard title="Medieninformatik BSc." dateRange="10.2019 - 08.2023" subtitle="Studium an der Hochschule Furtwangen" icon="school.svg">
-            <h2>Wahlpflichtfächer</h2>
-            <p class="secondInfo">back</p>
+        <SingleFlipCard title="Praktikum/Werstudentenjob" dateRange="03.2021 - 12.2023" subtitle="Praktikum beu teufels; im Anschluss Werkstudentin" icon="school.svg">
+            <h2>Tätigkeiten</h2>
+            <p class="secondInfo">Umsetzung dynamischer Webprojekte mit Typo3</p>
+            <p class="secondInfo">Verantwortung für die Entwicklung des Prakti-Projekts</p>
+            <p class="secondInfo">Contentpflege in Typo3 und Shopware</p>
+            <p class="secondInfo">Internetrecherche (Webseiten Testing)</p>
         </SingleFlipCard>
-
         <SingleFlipCard title="Medieninformatik BSc." dateRange="10.2019 - 08.2023" subtitle="Studium an der Hochschule Furtwangen" icon="school.svg">
             <h2>Wahlpflichtfächer</h2>
-            <p class="secondInfo">back</p>
+            <p class="secondInfo">Interface Design</p>
+            <p class="secondInfo">Zeichnen 1</p>
+            <p class="secondInfo">Digital Asset Creation</p>
+            <p class="secondInfo">Englisch B2.1</p>
+            <p class="secondInfo">UX Research</p>
+            <p class="secondInfo">Web Analytics</p>
+            <p class="secondInfo">Prototyping interaktiver Medien - Apps und Games</p>
+            <p class="secondInfo">Visual Novel</p>
+        </SingleFlipCard>
+        <SingleFlipCard title="Wirtschaftsoberstufe" dateRange="09.2017 - 08.2019" subtitle="Allgemeine Hochschulreife am Beruflichenschulzentrum Waldkirch" icon="school.svg">
+            <h2>Prüfungsfächer</h2>
+            <p class="secondInfo">Mathematik</p>
+            <p class="secondInfo">Deutsch</p>
+            <p class="secondInfo">Englisch</p>
+            <p class="secondInfo">BWL/VWL</p>
         </SingleFlipCard>
     </div>
 </div>
@@ -26,14 +42,14 @@ import Title from "../Title.astro";
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 30px 40px;
+        width: 100%;
 
-        @include respond-below(sm) {
+        @include respond-below(md) {
             flex-direction: column;
         }
     }
 
     .education-path {
-        margin-top: 16rem;
+        width: 100%;
     }
 </style>
