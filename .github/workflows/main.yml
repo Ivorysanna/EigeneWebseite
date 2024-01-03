@@ -44,4 +44,3 @@ jobs:
                   password: ${{ secrets.FTP_Password }}
                   protocol: ftps
                   local-dir: .output/
-                  security: strict
