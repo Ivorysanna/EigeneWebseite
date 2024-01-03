@@ -21,7 +21,7 @@ jobs:
             - uses: actions/upload-artifact@master
               with:
                   name: build-artifact
-                  path: .
+                  path: ./dist/
 
     # Deploy if this is the master branch
     deploy-ftp:
@@ -35,7 +35,7 @@ jobs:
             - uses: actions/download-artifact@master
               with:
                   name: build-artifact
-                  path: .output/
+                  path: .output/build/
             - name: Deploy to FTP Server
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
@@ -43,4 +43,4 @@ jobs:
                   username: github-deploy
                   password: ${{ secrets.FTP_Password }}
                   protocol: ftps
-                  local-dir: .output/
+                  local-dir: .output/build/
