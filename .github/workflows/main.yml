@@ -1,6 +1,14 @@
 name: Build and Deploy with FTP
 
-on: push
+on:
+    push:
+        branches: [master]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
 
 jobs:
     build:
@@ -11,34 +19,25 @@ jobs:
             - name: Install, build, and upload your site output
               uses: withastro/action@v1
 
-    deploy-gh-pages:
-        needs: build
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v1
-
     # Deploy if this is the master branch
     deploy-ftp:
         name: Deploy to FTP
         needs: build
         runs-on: ubuntu-20.04
-        if: github.ref == 'refs/heads/master'
+        environment: 
+            name: website-live
+            url: https://ivorysanna.de
         steps:
             - uses: actions/download-artifact@master
               with:
-                  name: build-artifact
-                  path: .output/public/
+                  name: github-pages
+                  path: .output/
             - name: Deploy to FTP Server
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
-                  server: ha01s018.org-dns.com
-                  username: bassadin_root_website
+                  server: hosting188010.ae8d3.netcup.net
+                  username: github-deploy
                   password: ${{ secrets.FTP_Password }}
                   protocol: ftps
-                  local-dir: .output/public/
+                  local-dir: .output/
                   security: strict
