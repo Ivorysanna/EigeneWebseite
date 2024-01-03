@@ -2,19 +2,32 @@
     width: 100%;
     display: flex;
     justify-content: left;
+    flex-direction: row;
+
+    @include respond-below(md) {
+        flex-direction: column;
+    }
 
     .text-container {
         width: 50%;
         padding: 5rem;
 
+        @include respond-below(md) {
+            width: 100%;
+            padding: 0 2vw;
+        }
+
         .title {
             font-size: xxx-large;
             margin: 6rem 0 1rem 0;
+
+            @include respond-below(md) {
+                margin: 2rem 0 1rem 0;
+            }
         }
 
         .text {
             height: auto;
-            /* display: flex; */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -39,5 +52,12 @@
         width: 50%;
         height: auto;
         object-fit: cover;
+
+        @include respond-below(md) {
+            width: 100%;
+
+            // Picture always on top on mobile
+            order: -1;
+        }
     }
 }

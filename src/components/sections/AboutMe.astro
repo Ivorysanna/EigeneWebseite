@@ -20,13 +20,14 @@ import Title from "~components/Title.astro";
 </div>
 
 <style lang="scss">
-    @import "~styles/mixins/_media-queries.scss";
-
     .about-me {
         margin-top: 5rem;
         display: flex;
         flex-direction: row;
-        margin-left: 10vw;
+
+        @include respond-above(lg) {
+            margin-left: 10vw;
+        }
 
         @include respond-below(lg) {
             flex-direction: column;
@@ -34,8 +35,10 @@ import Title from "~components/Title.astro";
     }
 
     .about-me-text {
+        margin: 0 2vw;
+
         @include respond-above(lg) {
-            margin: 200px 0 0 10vw;
+            margin-left: 10vw;
         }
     }
 
@@ -47,9 +50,9 @@ import Title from "~components/Title.astro";
     .square {
         position: absolute;
         right: 70px;
-        top: -20%;
+        top: -40%;
         width: 110vw;
-        height: 130%;
+        height: 150%;
         background-color: #ddbea9;
         z-index: -1;
     }
@@ -57,7 +60,7 @@ import Title from "~components/Title.astro";
     .about-me-photo {
         position: relative;
         width: 70vw;
-        
+
         @include respond-above(lg) {
             width: 35vw;
         }

@@ -9,38 +9,26 @@ import Title from "../Title.astro";
             <p class="skill-points">HTML 5 und CSS 3</p>
             <p class="skill-points">FIGMA</p>
             <p class="skill-points">Adobe Xd</p>
-            <p class="skill-points">Interfacedesign</p>
+            <p class="skill-points">Interface&shy;design</p>
             <p class="skill-points">UX Research</p>
             <p class="skill-points">Web Analytics</p>
             <p class="skill-points">Typo3</p>
             <p class="skill-points">Shopware</p>
         </div>
     </div>
-    <!-- <img class="skills-background-image" src="skillsBackground.png" /> -->
 </div>
 
 <style lang="scss">
-    .skills-background-image {
-        position: relative;
-        bottom: 560px;
-        left: 550px;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 1;
-        border-radius: 25%;
-        width: 400px;
-        width: 40%;
-        border-radius: 31px;
-        z-index: -1;
-    }
     .skill-card {
         margin: 0 15vw;
         padding: 20px;
         background-color: #fff5ed;
         border-radius: 31px;
-        transition: all 0.5s ease;
-        width: 30vw;
+        max-width: 40vw;
+        @include respond-below(md) {
+            max-width: 80vw;
+            margin: 0 10vw;
+        }
         z-index: 1000;
         box-shadow: 10px 10px 25px rgb(78, 78, 78);
         .skill-points {

@@ -8,22 +8,26 @@ import TextPicture from "../TextPicture.astro";
     <Title title="Projekte" />
     <PictureText
         picture="ich.JPG"
-        title="Projekt 1"
-        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
-        buttontext="hä"
+        title="Meine eigene Webseite"
+        text="Für meine eigene Webseite war es mir besonders wichtig, eine Plattform zu schaffen, die nicht nur ästhetisch ansprechen, sondern auch intuitiv navigierbar ist. Um dieses Ziel zu erreichen, erstellte ich eine Figma-Datei, welche ich als Gründlage für meine Webseite nutzte. Zusätzlich nutze ich Astro als Framework. "
+        buttontext="PDF runterladen"
     />
 
     <TextPicture
         picture="ich.JPG"
-        title="Projekt 2"
+        title="Webseite für Haustechnik Trösch & Schopp GmbH"
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
-        buttontext="hä"
+        buttontext="Zur Webseite"
+    />
+    <PictureText
+        picture="ich.JPG"
+        title="Webseiten Design für Sebinet"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
+        buttontext="PDF runterladen"
     />
 </div>
 
 <style lang="scss">
-    @import "~styles/mixins/_media-queries.scss";
-
     .projects {
         @include respond-below(lg) {
             flex-direction: column;
