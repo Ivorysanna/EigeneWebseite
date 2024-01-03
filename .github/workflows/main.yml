@@ -18,19 +18,23 @@ jobs:
             - uses: actions/checkout@v3
             - name: Install, build, and upload your site output
               uses: withastro/action@v1
+            - uses: actions/upload-artifact@master
+              with:
+                  name: build-artifact
+                  path: .output/
 
     # Deploy if this is the master branch
     deploy-ftp:
         name: Deploy to FTP
         needs: build
         runs-on: ubuntu-20.04
-        environment: 
+        environment:
             name: website-live
             url: https://ivorysanna.de
         steps:
             - uses: actions/download-artifact@master
               with:
-                  name: github-pages
+                  name: build-artifact
                   path: .output/
             - name: Deploy to FTP Server
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
