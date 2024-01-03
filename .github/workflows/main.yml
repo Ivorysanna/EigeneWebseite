@@ -44,3 +44,4 @@ jobs:
                   password: ${{ secrets.FTP_Password }}
                   protocol: ftps
                   local-dir: .output/build/
+                  dangerous-clean-slate: true
