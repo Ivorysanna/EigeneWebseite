@@ -3,13 +3,13 @@ import Title from "~components/Title.astro";
 ---
 
 <div id="about-me-anchor" class="about-me">
-    <div class="about-me-photo">
+    <div class="photo">
         <div class="square"></div>
         <img src="ich.JPG" />
     </div>
-    <div class="about-me-text">
+    <div class="text">
         <Title title="Über mich" />
-        <p>
+        <p class="introduction">
             Hi! ich bin Violetta, 26 Jahre alt und frisch in Karlsruhe eingezogen. Im August 2023 habe ich mein Studium als Medieninformatikerin erfolgreich abgeschlossen. Mich faszinieren neue Technologien und kreatives Design. Auf meiner Webseite möchte ich meine verschiedenen Projekte teilen und
             mich über meine Erfahrungen und Ideen austauschen.
         </p>
@@ -21,9 +21,11 @@ import Title from "~components/Title.astro";
 
 <style lang="scss">
     .about-me {
-        margin-top: 5rem;
+        margin-top: 3rem;
+        margin-bottom: 7rem;
         display: flex;
         flex-direction: row;
+        // justify-content: center;
 
         @include respond-above(lg) {
             margin-left: 10vw;
@@ -32,65 +34,65 @@ import Title from "~components/Title.astro";
         @include respond-below(lg) {
             flex-direction: column;
         }
-    }
 
-    .about-me-text {
-        margin: 0 2vw;
+        .photo {
+            position: relative;
 
-        @include respond-above(lg) {
-            margin-left: 10vw;
+            .square {
+                position: absolute;
+                top: -40%;
+                right: 70px;
+                height: 150%;
+                background-color: #ddbea9;
+                z-index: -1;
+                width: 110vw;
+                
+                @include respond-below(lg) {
+                    left: -70px;
+                    width: 70vw;
+                }
+            }
+
+            img {
+                width: 70vw;
+                height: auto;
+
+                @include respond-above(lg) {
+                    width: 30vw;
+                }
+            }
         }
-    }
 
-    h1 {
-        font-size: 20px;
-        text-transform: uppercase;
-    }
+        .text {
+            margin: 1rem 2vw;
 
-    .square {
-        position: absolute;
-        right: 70px;
-        top: -40%;
-        width: 110vw;
-        height: 150%;
-        background-color: #ddbea9;
-        z-index: -1;
-    }
+            @include respond-above(lg) {
+                margin: 4rem 5vw 0 10vw;
+            }
 
-    .about-me-photo {
-        position: relative;
-        width: 70vw;
+            .introduction {
+                margin-top: 2rem;
+                font-size: 20px;
+                line-height: 30px;
+            }
 
-        @include respond-above(lg) {
-            width: 35vw;
+            .button {
+                margin-top: 3rem;
+                width: fit-content;
+                padding: 0 1rem;
+                height: 50px;
+                background-color: #a5a58d;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 25px;
+            }
+
+            .button a {
+                color: white;
+                text-decoration: none;
+            }
         }
-    }
-
-    img {
-        width: 100%;
-    }
-
-    p {
-        margin-top: 2rem;
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    .button {
-        margin-top: 3rem;
-        width: fit-content;
-        padding: 0 1rem;
-        height: 50px;
-        background-color: #a5a58d;
-        font-size: 20px;
-        line-height: 50px;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 25px;
-    }
-
-    .button a {
-        color: white;
-        text-decoration: none;
     }
 </style>
