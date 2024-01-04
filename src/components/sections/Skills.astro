@@ -5,6 +5,7 @@ import Title from "../Title.astro";
 <div id="skills-anchor" class="skills-section">
     <Title title="Skills" color="#fff5ed" />
     <div class="skills-card-container">
+        <img class="skills-background-image" src="skillsBackground.png" />
         <div class="skill-card">
             <p class="skill-points">HTML 5 und CSS 3</p>
             <p class="skill-points">FIGMA</p>
@@ -20,21 +21,21 @@ import Title from "../Title.astro";
 
 <style lang="scss">
     .skill-card {
-        margin: 0 15vw;
         padding: 20px;
         background-color: #fff5ed;
         border-radius: 31px;
-        max-width: 40vw;
-        @include respond-below(md) {
-            max-width: 80vw;
-            margin: 0 10vw;
-        }
+        max-width: 30vw;
         z-index: 1000;
         box-shadow: 10px 10px 25px rgb(78, 78, 78);
+
+        @include respond-below(md) {
+            max-width: 100%;
+            margin: 5rem 7vw;
+        }
         .skill-points {
             padding: 15px;
             margin: 0 30px;
-            font-size: 30px;
+            font-size: larger;
             text-align: center;
             border-bottom: 3px solid black;
             text-transform: uppercase;
@@ -52,10 +53,34 @@ import Title from "../Title.astro";
     .skills-card-container {
         position: relative;
         z-index: 100;
+        width: 100%;
+
+        @include respond-above(md) {
+            margin-left: 25vw;
+        }
     }
 
     .skills-section {
         background-color: #ddbea9;
         padding: 50px 0 100px 0;
+    }
+
+    .skills-background-image {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: -10;
+        object-fit: cover;
+
+        @include respond-above(md) {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        @include respond-below(md) {
+            width: 100%;
+            left: 0;
+            top: -3rem;
+        }
     }
 </style>
