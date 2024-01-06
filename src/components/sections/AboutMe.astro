@@ -1,5 +1,6 @@
 ---
 import Title from "~components/Title.astro";
+import LinkButton from "~components/LinkButton.astro";
 ---
 
 <div id="about-me-anchor" class="about-me">
@@ -10,12 +11,11 @@ import Title from "~components/Title.astro";
     <div class="text">
         <Title title="Über mich" />
         <p class="introduction">
-            Hi! ich bin Violetta, 26 Jahre alt und frisch in Karlsruhe eingezogen. Im August 2023 habe ich mein Studium als Medieninformatikerin erfolgreich abgeschlossen. Mich faszinieren neue Technologien und kreatives Design. Auf meiner Webseite möchte ich meine verschiedenen Projekte teilen und
+            Hi! ich bin Violetta, 25 Jahre alt und frisch in Karlsruhe eingezogen. Im August 2023 habe ich mein Studium als Medieninformatikerin erfolgreich abgeschlossen. Mich faszinieren neue Technologien und kreatives Design. Auf meiner Webseite möchte ich meine verschiedenen Projekte teilen und
             mich über meine Erfahrungen und Ideen austauschen.
         </p>
-        <p class="button">
-            <a href="mailto:violetta.pyralov@gmail.com">Let's keep in touch</a>
-        </p>
+
+        <LinkButton href="mailto:violetta.pyralov@gmail.com" text="Let's keep in touch" />
     </div>
 </div>
 
@@ -46,7 +46,7 @@ import Title from "~components/Title.astro";
                 background-color: #ddbea9;
                 z-index: -1;
                 width: 110vw;
-                
+
                 @include respond-below(lg) {
                     left: -70px;
                     width: 70vw;

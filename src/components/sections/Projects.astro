@@ -1,7 +1,6 @@
 ---
 import Title from "../Title.astro";
 import PictureText from "../PictureText.astro";
-import TextPicture from "../TextPicture.astro";
 ---
 
 <div id="projects-anchor" class="projects">
@@ -10,20 +9,31 @@ import TextPicture from "../TextPicture.astro";
         picture="ich.JPG"
         title="Meine eigene Webseite"
         text="Für meine eigene Webseite war es mir besonders wichtig, eine Plattform zu schaffen, die nicht nur ästhetisch ansprechen, sondern auch intuitiv navigierbar ist. Um dieses Ziel zu erreichen, erstellte ich eine Figma-Datei, welche ich als Grundlage für meine Webseite nutzte. Zusätzlich nutze ich Astro als Framework. "
-        buttontext="PDF runterladen"
+        buttontext="Zur PDF"
+        href="/Webseite.pdf"
     />
 
-    <TextPicture
+    <PictureText
         picture="ich.JPG"
         title="Webseite für Haustechnik Trösch & Schopp GmbH"
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
         buttontext="Zur Webseite"
+        pictureFirst={false}
+        href="/SebbisWebseite.pdf"
     />
     <PictureText
         picture="ich.JPG"
         title="Webseiten Design für Sebinet"
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
-        buttontext="PDF runterladen"
+        buttontext="Zur PDF"
+    />
+
+    <PictureText
+        picture="ich.JPG"
+        title="Portfolio Interface Design"
+        text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet"
+        buttontext="Zur PDF"
+        pictureFirst={false}
     />
 </div>
 

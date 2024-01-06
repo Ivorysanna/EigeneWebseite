@@ -1,19 +1,94 @@
 ---
-const { picture, title, text, buttontext } = Astro.props;
+interface Props {
+    picture: string;
+    title: string;
+    text: string;
+    buttontext: string;
+    href?: string;
+    pictureFirst?: boolean;
+}
+const { picture, title, text, buttontext, href, pictureFirst = true } = Astro.props;
+
+import LinkButton from "~components/LinkButton.astro";
 ---
 
 <div class="picturetext-container">
-    <div class="picture">
-        <img src={picture} />
-    </div>
-
+    {pictureFirst && <img class="picture" src={picture} />}
     <div class="text-container">
         <h1 class="title">{title}</h1>
         <p class="text">{text}</p>
-        <p class="button">{buttontext}</p>
+        {href && <LinkButton href={href} text={buttontext} />}
     </div>
+    {!pictureFirst && <img class="picture" src={picture} />}
 </div>
 
 <style lang="scss">
-    @import "~styles/textPicture.scss";
+    .picturetext-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 5rem 0;
+
+        @include respond-below(md) {
+            flex-direction: column;
+        }
+
+        .text-container {
+            width: 55%;
+            padding: 2rem 5rem;
+
+            @include respond-below(md) {
+                width: 100%;
+                padding: 0 2vw;
+            }
+
+            .title {
+                font-size: xx-large;
+                margin: 6rem 0 1rem 0;
+
+                @include respond-below(md) {
+                    margin: 2rem 0 1rem 0;
+                }
+            }
+
+            .text {
+                height: auto;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: x-large;
+            }
+
+            .button {
+                margin-top: 3rem;
+                width: 200px;
+                height: 50px;
+                background-color: #a5a58d;
+                font-size: large;
+                // line-height: 0px;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 25px;
+                color: white;
+            }
+        }
+
+        .picture {
+            width: 45%;
+
+            background-size: cover;
+
+            @include respond-below(md) {
+                width: 100%;
+
+                // Picture always on top on mobile
+                order: -1;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 </style>
