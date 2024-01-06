@@ -8,7 +8,7 @@ const { text, href, isDownload = false }: Props = Astro.props;
 ---
 
 <button class="button">
-    <a href={href} download={isDownload}>
+    <a href={href} target="_blank" download={isDownload}>
         {text}
     </a>
 </button>
