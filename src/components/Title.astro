@@ -1,8 +1,13 @@
 ---
-const { title, color = "#ddbea9" } = Astro.props;
+interface Props {
+    title: string;
+    color?: string;
+    indented?: boolean;
+}
+const { title, color = "#ddbea9", indented = false } = Astro.props;
 ---
 
-<div class="titleDiv">
+<div class="titleDiv" class:list={[indented && "indented"]}>
     <h2>{title}</h2>
     <div class="small-square"></div>
 </div>
@@ -21,5 +26,9 @@ const { title, color = "#ddbea9" } = Astro.props;
 
     .titleDiv {
         margin: 4rem 0 2rem 0;
+    }
+
+    .indented {
+        margin-left: 2rem;
     }
 </style>

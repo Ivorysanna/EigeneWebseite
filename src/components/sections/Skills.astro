@@ -1,9 +1,9 @@
 ---
-import Title from "../Title.astro";
+import Title from "~components/Title.astro";
 ---
 
 <div id="skills-anchor" class="skills-section">
-    <Title title="Skills" color="#fff5ed" />
+    <Title title="Skills" color="#fff5ed" indented={true} />
     <div class="skills-card-container">
         <img class="skills-background-image" src="skillsBackground.png" />
         <div class="skill-card">
@@ -53,7 +53,6 @@ import Title from "../Title.astro";
     .skills-card-container {
         position: relative;
         z-index: 100;
-        width: 100%;
 
         @include respond-above(md) {
             margin-left: 25vw;

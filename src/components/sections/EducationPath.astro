@@ -1,13 +1,13 @@
 ---
-import SingleFlipCard from "../SingleFlipCard.astro";
-import Title from "../Title.astro";
+import SingleFlipCard from "~components/SingleFlipCard.astro";
+import Title from "~components/Title.astro";
 ---
 
 <div id="education-path-anchor" class="education-path">
-    <Title title="Bildungsweg" />
+    <Title title="Bildungsweg" indented={true} />
 
     <div class="cards-group">
-        <SingleFlipCard title="Praktikum / Werk­studenten­job" dateRange="03.2021 - 12.2023" subtitle="Praktikum beu teufels; im Anschluss Werk­studentin" icon="school.svg">
+        <SingleFlipCard title="Praktikum / Werk­studenten­job" dateRange="03.2021 - 12.2023" subtitle="Praktikum bei teufels; im Anschluss Werk­studentin" icon="school.svg">
             <h2>Tätigkeiten</h2>
             <div class="description-item-container">
                 <p>Umsetzung dynamischer Web&shy;projekte mit Typo3</p>
@@ -46,6 +46,7 @@ import Title from "../Title.astro";
         p {
             margin-bottom: 0;
             font-size: 1.2rem;
+            // color: #FFF5ED;
         }
     }
     .cards-group {
@@ -54,6 +55,7 @@ import Title from "../Title.astro";
         justify-content: center;
         width: 100%;
         margin-bottom: 5rem;
+        // color: #FFF5ED;
 
         @include respond-below(md) {
             flex-direction: column;
